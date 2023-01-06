@@ -1,1 +1,30 @@
-<h1>welcome to our website</h1>
+<div class="homeContainer">
+  <header>
+    <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond">
+  </header>
+
+  <div class="homeWrapper">
+    <h1>A propos</h1>
+    <p>Lorem ipsum dolor sit amet. Ea dolorem officia ex voluptas quaerat et sapiente autem in soluta recusandae sed cupiditate inventore sed repudiandae ullam in aliquid atque. Id odio eligendi qui modi aperiam aut voluptatem minima sed molestiae iste et quibusdam veniam aut porro voluptatem est alias ducimus.
+
+    Est commodi distinctio ad cumque porro aut adipisci perspiciatis ut perferendis temporibus et saepe sunt est obcaecati iure 33 vitae beatae. Qui nisi galisum eos quisquam enim aut saepe obcaecati qui explicabo rerum.
+
+    Qui ducimus laboriosam aut saepe velit a natus excepturi est sequi excepturi! Aut eligendi illo et doloremque recusandae a doloremque rerum ut praesentium possimus.
+    </p>
+    <div class="homeCategory">
+      <h2>Les catégories</h2>
+      <div class="squareContainer">
+        <div *ngFor="let item of items">
+          <div class="square" [style.background-image]="'url(' + item.imageUrl + ')'">
+            <div class="label" [ngStyle]="{'color' : 'black'}">{{ item.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="homeLastRegistrant">
+      <h2>Les derniers inscrits</h2>
+      
+    </div>
+  </div>
+</div>
