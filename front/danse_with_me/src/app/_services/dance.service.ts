@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Dance } from '../_models/dance';
 
 @Injectable({
@@ -8,20 +9,19 @@ import { Dance } from '../_models/dance';
 })
 export class DanceService {
 
-	readonly API_URL = 'http://localhost:8080';
-  readonly ENDPOINT_DANCE = '/dance';
+  readonly ENDPOINT_DANCE = '/dance/';
   readonly ENDPOINT_DANCES = '/dances';
 
 
 
   constructor(private httpClient:HttpClient) { }
   getDances(): Observable<Dance[]> {
-		return this.httpClient.get<Dance[]>(this.API_URL + this.ENDPOINT_DANCES);
+		return this.httpClient.get<Dance[]>(environment.urlAPI + this.ENDPOINT_DANCES);
 	}
 
 
   getDance(id: string): Observable<Dance> {
-		return this.httpClient.get<Dance>(this.API_URL+this.ENDPOINT_DANCE+ id);
+		return this.httpClient.get<Dance>(environment.urlAPI + this.ENDPOINT_DANCE + id);
 	}
 
 

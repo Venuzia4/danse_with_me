@@ -1,19 +1,21 @@
-<div class="homeContainer">
-  <header>
-    <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond">
-  </header>
+<div class="homeContainer" *ngIf="dances">
 
   <div class="homeWrapper">
-    <div class="homeCategory">
-      <h2>Les catégories</h2>
-      <div class="squareContainer">
-        <div *ngFor="let item of items">
-          <div class="square" [style.background-image]="'url(' + item.imageUrl + ')'">
-            <div class="label" [ngStyle]="{'color' : '#ffff'}">{{ item.label }}</div>
+    <div class="squareContainer">
+      <div *ngFor="let dance of dances">
+        <div class="square">
+          <div class="square-inner">
+            <div class="square-front">
+              <img src="{{dance.picture}}" alt="image logo">
+            </div>
+            <div class="square-back">
+              <h2>{{ dance.name }}</h2>
+              <p>{{ dance.description }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div><br>
+    </div>
 
     <div class="homeLastRegistrant">
       <h2>Les derniers inscrits</h2>

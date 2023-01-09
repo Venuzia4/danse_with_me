@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Dance } from '../_models/dance';
+import { User } from '../_models/user';
+import { DanceService } from '../_services/dance.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  autoPlay = false;
-  intervalId!: any;
-  currentIndex: number = 0;
+  public dances!: Dance[];
+  public autoPlay = false;
+  public intervalId!: any;
+  public currentIndex: number = 0;
 
   items = [
       { label: 'SALSA', imageUrl: '../../assets/65890971.png' },
@@ -28,7 +32,7 @@ export class HomeComponent implements OnInit {
     { imageUrl: '../../assets/pexels-dziana-hasanbekava-7275385.jpg'}
   ]
 
-  constructor() { }
+  constructor(private danceService: DanceService) { }
 
 
   startAutoPlay() {
@@ -50,7 +54,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.startAutoPlay();
-  }
+    this.danceService.getDances().subscribe(dance => {
+      this.dances = dance
+    })
+  };
 
   resetAutoPlay() {
     this.currentIndex = 0;
