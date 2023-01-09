@@ -14,36 +14,31 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
-public class User {
+@Table(name = "dance")
+public class Dance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    private String firstname;
-
-    private String lastname;
-
-    private String genre;
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
 
     @Lob
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description", nullable = false)
     private String description;
 
-    private String country;
-
     @Lob
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "picture", nullable = false)
     private String picture;
 
-
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "user_dance",
-            joinColumns = @JoinColumn(name = "id_user"),
-            inverseJoinColumns = @JoinColumn(name = "id"))
-    private Set<Dance> dances = new HashSet<>();
-
-
-
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id_user"))
+    private Set<User> users = new HashSet<>();
+    public void addUser(User user) {
+        users.add(user);
+    }
 }
