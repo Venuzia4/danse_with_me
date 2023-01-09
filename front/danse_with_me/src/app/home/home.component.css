@@ -3,6 +3,10 @@ header img {
   height: 80vh;
 }
 
+.homeLastRegistrant {
+  margin-bottom: 5vh;
+}
+
 .square {
   height: 30vh;
   width: 48vh;
