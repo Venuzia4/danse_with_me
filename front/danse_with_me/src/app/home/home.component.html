@@ -1,1 +1,32 @@
-<h1>welcome to our website</h1>
+<div class="homeContainer">
+  <header>
+    <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond">
+  </header>
+
+  <div class="homeWrapper">
+    <div class="homeCategory">
+      <h2>Les catégories</h2>
+      <div class="squareContainer">
+        <div *ngFor="let item of items">
+          <div class="square" [style.background-image]="'url(' + item.imageUrl + ')'">
+            <div class="label" [ngStyle]="{'color' : '#ffff'}">{{ item.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <div class="homeLastRegistrant">
+      <h2>Les derniers inscrits</h2>
+      <div class="carousel">
+        <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
+        <div *ngFor="let picture of pictures | slice:currentIndex:currentIndex + 5">
+          <div class="slide">
+            <img [src]="picture.imageUrl" alt="Image">
+          </div>
+        </div>
+        <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>
+        <span (click)="toggleAutoPlay()" ></span>
+      </div>
+    </div>
+  </div>
+</div>
