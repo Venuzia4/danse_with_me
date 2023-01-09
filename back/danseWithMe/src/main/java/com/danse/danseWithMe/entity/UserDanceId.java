@@ -3,5 +3,5 @@ package com.danse.danseWithMe.entity;
 import jakarta.persistence.Entity;
 
 @Entity
-public class User {
+public class UserDanceId {
 }
