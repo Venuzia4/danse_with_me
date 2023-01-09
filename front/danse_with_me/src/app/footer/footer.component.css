@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+}
+
+.footerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.follow {
+    text-align: center;
+}
+
+
+
