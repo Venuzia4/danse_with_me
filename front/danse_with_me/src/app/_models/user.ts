@@ -1,4 +1,3 @@
-import { Dance } from "./dance";
 
 export class User {
 constructor(
@@ -7,5 +6,6 @@ constructor(
   public description:string,
   public genre:string,
   public picture:string,
+  public city: string
   ){}
 }

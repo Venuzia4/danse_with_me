@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ButtonComponent } from './_components/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ListProfileComponent,
     ProfileComponent,
-    ButtonComponent
-
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

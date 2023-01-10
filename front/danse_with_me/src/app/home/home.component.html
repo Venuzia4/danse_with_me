@@ -1,5 +1,5 @@
-<div class="homeContainer" *ngIf="dances">
-
+<div class="homeContainer" *ngIf="dances && users" >
+  <h2>Les catégories</h2>
   <div class="homeWrapper">
     <div class="squareContainer">
       <div *ngFor="let dance of dances">
@@ -16,14 +16,13 @@
         </div>
       </div>
     </div>
-
-    <div class="homeLastRegistrant">
+    <div class="homeLastRegistrant" >
       <h2>Les derniers inscrits</h2>
       <div class="carousel">
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
-        <div *ngFor="let picture of pictures | slice:currentIndex:currentIndex + 5">
+        <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
-            <img [src]="picture.imageUrl" alt="Image">
+            <img src="{{ user.picture }}" alt="Image">
           </div>
         </div>
         <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>

@@ -1,7 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Dance } from '../_models/dance';
 import { User } from '../_models/user';
 import { DanceService } from '../_services/dance.service';
+import { UserService } from '../_services/user.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,30 +12,23 @@ import { DanceService } from '../_services/dance.service';
 })
 export class HomeComponent implements OnInit {
 
-  public dances!: Dance[];
+  public users!: User[];
   public autoPlay = false;
   public intervalId!: any;
   public currentIndex: number = 0;
+  public dances!: Dance[];
 
-  items = [
-      { label: 'SALSA', imageUrl: '../../assets/65890971.png' },
-      { label: 'BACHATA', imageUrl: '../../assets/65891002.png' },
-      { label: 'KIZOMBA', imageUrl: '../../assets/65899291.png' },
+  constructor(private danceService: DanceService, private userService: UserService) { }
 
-    ];
-
-  pictures = [
-    { imageUrl: '../../assets/pexels-arthouse-studio-4571943.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-5378700.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-5821482.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-6626882.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-6962024.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-8090137.jpg'},
-    { imageUrl: '../../assets/pexels-dziana-hasanbekava-7275385.jpg'}
-  ]
-
-  constructor(private danceService: DanceService) { }
-
+  ngOnInit(): void {
+    this.danceService.getDances().subscribe(dance => {
+      this.dances = dance
+    });
+    this.startAutoPlay();
+    this.userService.getUsers().subscribe(user => {
+      this.users = user
+    })
+  };
 
   startAutoPlay() {
     this.intervalId = setInterval(() => this.scrollRight(), 3000);
@@ -52,13 +47,6 @@ export class HomeComponent implements OnInit {
     clearInterval(this.intervalId);
   }
 
-  ngOnInit(): void {
-    this.startAutoPlay();
-    this.danceService.getDances().subscribe(dance => {
-      this.dances = dance
-    })
-  };
-
   resetAutoPlay() {
     this.currentIndex = 0;
     this.stopAutoPlay();
@@ -72,13 +60,10 @@ export class HomeComponent implements OnInit {
   }
 
   scrollRight() {
-    if (this.currentIndex < this.pictures.length - 5) {
+    if (this.currentIndex < this.users.length - 5) {
       this.currentIndex++;
     } else {
       this.resetAutoPlay();
     }
   }
-
-  }
-
-
+}

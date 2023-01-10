@@ -102,9 +102,13 @@ header img {
   background-color: #bbb;
 }
 .square-back {
-  background-color: #2980b9;
+  background-color: #36393b;
   color: white;
   transform: rotateY(180deg);
+}
+.square-front img {
+  height: 100%;
+  width: 100%;
 }
 
 
