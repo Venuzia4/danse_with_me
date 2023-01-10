@@ -1,3 +1,9 @@
+.footer {
+  height: 35vh;
+  padding-top: 6vh;
+  background-color: antiquewhite;
+}
+
 a {
     text-decoration: none;
 }
@@ -11,6 +17,7 @@ a {
 .iconWrapper {
     display: flex;
     align-items: center;
+    padding-left: 50px;
 }
 
 .follow {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -8,7 +9,6 @@ import { User } from '../_models/user';
 })
 export class UserService {
 
-	readonly API_URL = 'http://localhost:8080';
   readonly ENDPOINT_USER = '/user/';
   readonly ENDPOINT_USERS = '/users';
 
@@ -17,11 +17,11 @@ export class UserService {
   constructor(private httpClient:HttpClient) { }
 
   getUsers(): Observable<User[]> {
-		return this.httpClient.get<User[]>(this.API_URL + this.ENDPOINT_USERS +"/all");
+		return this.httpClient.get<User[]>(environment.urlAPI + this.ENDPOINT_USERS +"/all");
 	}
 
 
   getUser(id:number): Observable<User> {
-		return this.httpClient.get<User>(this.API_URL+this.ENDPOINT_USER + id);
+		return this.httpClient.get<User>(environment.urlAPI + this.ENDPOINT_USER + id);
 	}
 }
