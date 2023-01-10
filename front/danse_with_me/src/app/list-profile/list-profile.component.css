@@ -1,0 +1,141 @@
+.backgroundDanse{
+    background-image: url('/assets/images/pas-de-danse.png');
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundDanse h2{
+    color: white;
+    font-size: 4rem;
+}
+
+.cadreDescription{
+    text-align: center;
+    color: wheat;
+    background-color: black;
+    transform: translate(50%,-10%); 
+    width: 50%;
+    padding: 2rem;
+    border-radius: 5px;
+    color: wheat;
+}
+
+.titreList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: auto;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(218,214,214,1) 50%, rgba(255,255,255,1) 100%);
+    padding: 10px;
+    gap: 8px;
+}
+
+.titreList form{
+    display: flex;
+    gap: 10px;
+}
+
+.checkTri{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(179, 177, 177);
+    padding: 5px;
+}
+
+.checkTri input{
+    display: none;
+}
+
+.check-with-label + label:hover{
+    -webkit-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    -moz-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    color: black;
+}
+
+.check-with-label:checked + label{
+    color: black;
+    -webkit-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    -moz-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    box-shadow: 0 0 6.5px 1.5px #b3b2b2;
+    
+}
+
+.square{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.imgLabel{
+    height: 50px;
+}
+
+.imgLabelOneMan{
+    height: 45px;
+    margin-top: 5px;
+}
+
+
+.containerPageDanse{ 
+    display: flex;
+    justify-content: center;
+}
+
+.containerPageDanseProfiles{
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 15px;
+}
+
+.profileCard{
+    width: 250px;
+    height: 300px;
+    margin: auto;
+    background-image: url('/assets/pexels-cottonbro-studio-5378700.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: center;
+    border-radius: 5px;
+    position: relative;
+    transition: scale;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+
+.profileCard:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 0 0 6.5px 1.5px #7f7b7b;
+    -moz-box-shadow: 0 0 6.5px 1.5px #7f7b7b;
+    box-shadow: 0 0 6.5px 1.5px #7f7b7b;
+}
+
+.imageProfile{
+    width: 100%;
+    height: 70%;
+}
+
+.detailProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 30%;
+    background-color: white;
+    opacity: 0.8;
+}
