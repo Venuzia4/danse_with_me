@@ -10,6 +10,7 @@ import { ListProfileComponent } from './list-profile/list-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ButtonComponent } from './_components/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     ListProfileComponent,
     ProfileComponent,
     ButtonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
