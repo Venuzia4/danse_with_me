@@ -14,7 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
     ListProfileComponent,
     ProfileComponent
 
