@@ -5,6 +5,8 @@
     background-color: transparent;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    z-index: 1;
 }
 
 .profilPicture {
@@ -24,5 +26,4 @@
     height: 140px;
     left: 0; */
     height: 140px;
-
 }
