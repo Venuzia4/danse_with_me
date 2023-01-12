@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { User } from '../_models/user';
+import { UserService } from '../_services/user.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Dance } from '../_models/dance';
+import { DanceService } from '../_services/dance.service';
 
 @Component({
   selector: 'app-home',
@@ -6,29 +13,27 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  users!: User[];
+  dances!:Dance[];
+  id!:string;
+  public searchForm!:FormGroup;
+
 
   autoPlay = false;
   intervalId!: any;
   currentIndex: number = 0;
 
   items = [
-      { label: 'SALSA', imageUrl: '../../assets/65890971.png' },
-      { label: 'BACHATA', imageUrl: '../../assets/65891002.png' },
-      { label: 'KIZOMBA', imageUrl: '../../assets/65899291.png' },
+    { label: 'SALSA', imageUrl: '../../assets/65890971.png' },
+    { label: 'BACHATA', imageUrl: '../../assets/65891002.png' },
+    { label: 'KIZOMBA', imageUrl: '../../assets/65899291.png' },
 
-    ];
+  ];
 
-  pictures = [
-    { imageUrl: '../../assets/pexels-arthouse-studio-4571943.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-5378700.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-5821482.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-6626882.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-6962024.jpg'},
-    { imageUrl: '../../assets/pexels-cottonbro-studio-8090137.jpg'},
-    { imageUrl: '../../assets/pexels-dziana-hasanbekava-7275385.jpg'}
-  ]
 
-  constructor() { }
+
+  constructor(private userService: UserService,private router: Router,private formBuilder:FormBuilder,private danseService:DanceService
+		) { }
 
 
   startAutoPlay() {
@@ -50,7 +55,51 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.startAutoPlay();
+
+    this.userService.getUsers().subscribe((
+      (result: User[]) => {
+        console.log(result);
+        this.users = result;
+
+      }
+    ))
+
+    this.danseService.getDances().subscribe((
+      (result: Dance[]) => {
+        console.log(result);
+        this.dances = result;
+
+
+      }
+    ))
+
+
+     this.searchForm=this.formBuilder.group({
+
+       id:['',Validators.required],
+
+     });
+
   }
+
+   onSearchUsers(id:string){
+    this.searchForm.getRawValue;
+   this.router.navigate(['/list-profile',id])
+
+    console.log(this.searchForm.value)
+   }
+
+  getUser(id: string) {
+		this.router.navigate(['/profil',id]);
+	}
+
+   get name() {
+	 	return this.searchForm.get('name');
+	}
+
+  get danceId() {
+		return this.searchForm.get('id');
+	}
 
   resetAutoPlay() {
     this.currentIndex = 0;
@@ -65,13 +114,13 @@ export class HomeComponent implements OnInit {
   }
 
   scrollRight() {
-    if (this.currentIndex < this.pictures.length - 5) {
+    if (this.currentIndex < this.users.length - 5) {
       this.currentIndex++;
     } else {
       this.resetAutoPlay();
     }
   }
 
-  }
+}
 
 

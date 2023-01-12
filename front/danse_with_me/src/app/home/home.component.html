@@ -1,8 +1,37 @@
 <div class="homeContainer">
-  <header>
+  <!-- <header>
     <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond">
-  </header>
+  </header> -->
 
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+<form  [formGroup]="searchForm" class="search-bar" (ngSubmit)=" onSearchUsers(id)">
+
+  		<select
+			class="search"
+			name="id"
+			type="text"
+			formControlName="id"
+
+		>
+
+    <option [ngValue]="null" disabled>selectionner une danse</option>
+			<option
+				*ngFor="let dance of dances"
+        [value]="dance.id"
+			>
+				{{ dance.name}}
+			</option>
+    </select>
+    <input type="submit" value="Submit">
+
+		<!--
+  <input class="search" type="search" formControlName="name"  placeholder="Effectuez une recherche par catégories de danse"> -->
+  <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+
+
+
+</form>
   <div class="homeWrapper">
     <div class="homeCategory">
       <h2>Les catégories</h2>
@@ -19,9 +48,9 @@
       <h2>Les derniers inscrits</h2>
       <div class="carousel">
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
-        <div *ngFor="let picture of pictures | slice:currentIndex:currentIndex + 5">
+        <div *ngFor="let picture of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
-            <img [src]="picture.imageUrl" alt="Image">
+            <img  (click)="getUser(picture.id)" [src]="picture.picture" alt="Image">
           </div>
         </div>
         <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>
@@ -30,3 +59,5 @@
     </div>
   </div>
 </div>
+
+

@@ -21,7 +21,7 @@ export class UserService {
 	}
 
 
-  getUser(id:number): Observable<User> {
+  getUser(id:string): Observable<User> {
 		return this.httpClient.get<User>(this.API_URL+this.ENDPOINT_USER + id);
 	}
 }
