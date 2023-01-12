@@ -1,22 +1,17 @@
 
   <img class="bg-picture" src="assets/pic.jpg"  alt="picture"/>
-  <div class="profil-card">
+
+  <div class="profil-card" *ngIf="user">
   <div class="profil-name">
-  <h4 >Nom:Doe</h4>
-  <h5>Prenom:Jane</h5>
-  <h5>Genre:Feminin</h5>
-  <h5>Ville:Bègles</h5>
-
-  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dignissimos, quibusdam quo sunt vero maxime ipsa earum, molestiae quasi harum vel.
-    Distinctio, mollitia! Corrupti voluptates assumenda beatae asperiores sit magni?
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat atque eum omnis neque, laborum qui
-   cupiditate sunt aut eligendi modi alias, eius a, accusantium et nulla totam soluta vitae expedita!</p>
-
-
+  <h4 >Nom:{{user.firstname}}</h4>
+  <h5>Prenom:{{user.lastname}}</h5>
+  <h5>Genre:{{user.genre}}</h5>
+  <h5>Ville:{{user.city}}</h5>
+  <p >{{user.description}}</p>
   <p>Joingnez-moi sur :<span>jonaDo@gmail.com</span></p>
   </div>
 
-<img class="profil" src="assets/profil1.png" alt="profil"/>
+<img  class="profil" src={{user.picture}} alt="profil"/>
 
 </div>
 

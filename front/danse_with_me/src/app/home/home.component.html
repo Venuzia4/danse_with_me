@@ -1,7 +1,9 @@
 
-
 <div class="homeContainer" *ngIf="dances && users" >
   <h2>Les catégories</h2>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+
   <div class="homeWrapper">
     <div class="squareContainer">
       <div *ngFor="let dance of dances">
@@ -24,7 +26,8 @@
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
         <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
-            <img (click)="gotToProfileId(user.id)"src="{{ user.picture }}" alt="Image">
+            <img (click)="getUser(user.id)" src="{{ user.picture }}" alt="Image">
+
           </div>
         </div>
         <span class="rightArrow" (click)="scrollRight()"><strong>>></strong></span>
@@ -33,3 +36,5 @@
     </div>
   </div>
 </div>
+
+

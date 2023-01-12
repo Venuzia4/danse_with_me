@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 
@@ -9,20 +10,21 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  user!:User;
+  id!:string;
 
-  profileId!: string;
-  users!:User[];
-  user!: User;
-  id!:number;
+  constructor(private userservice:UserService,private route: ActivatedRoute,) {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      return this.userservice.getUser(<string>params.get('id')).subscribe((response)=>{
+        console.log(response)
+        this.user=response;
+      })
 
-  constructor(private userService:UserService, private route: ActivatedRoute) { }
+    })
+   }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((
-      (result:User[])=>{
-        console.log(result);
-        this.users=result;
-      }
-    ));
+
+
   }
 }

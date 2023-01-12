@@ -1,13 +1,11 @@
-package com.danse.danseWithMe.entity;
+package com.danse.danseWithMe.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
@@ -32,6 +30,7 @@ public class User {
     private String description;
 
     private String city;
+    private  String email;
 
     @Lob
     @Column(columnDefinition = "TEXT")
