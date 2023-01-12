@@ -1,14 +1,16 @@
+
+
 <div class="homeContainer" *ngIf="dances && users" >
   <h2>Les catégories</h2>
   <div class="homeWrapper">
     <div class="squareContainer">
       <div *ngFor="let dance of dances">
         <div class="square">
-          <div class="square-inner">
-            <div class="square-front">
-              <img src="{{dance.picture}}" alt="image logo">
+          <div class="squareInner">
+            <div class="squareFront">
+              <img  src="{{dance.picture}}" alt="image logo">
             </div>
-            <div class="square-back">
+            <div class="squareBack" (click)="goToListProfil(dance.id)">
               <h2>{{ dance.name }}</h2>
               <p>{{ dance.description }}</p>
             </div>
@@ -22,11 +24,11 @@
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
         <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
-            <img src="{{ user.picture }}" alt="Image">
+            <img (click)="gotToProfileId(user.id)"src="{{ user.picture }}" alt="Image">
           </div>
         </div>
-        <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>
-        <span (click)="toggleAutoPlay()" ></span>
+        <span class="rightArrow" (click)="scrollRight()"><strong>>></strong></span>
+        <span ></span>
       </div>
     </div>
   </div>

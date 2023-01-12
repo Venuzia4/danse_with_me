@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
-    List<User> findByGenreOrCountry(String genre, String country);
+    List<User> findByGenreOrCity(String genre, String city);
 
     List<User> findUsersByDancesId(Integer id);
 

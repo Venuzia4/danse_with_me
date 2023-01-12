@@ -31,7 +31,7 @@ public class User {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    private String country;
+    private String city;
 
     @Lob
     @Column(columnDefinition = "TEXT")

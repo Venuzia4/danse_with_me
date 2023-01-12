@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getUsersByGenreOrCountry(@RequestParam String genre , @RequestParam (required = false) String country){
-        return userRepository.findByGenreOrCountry(genre,country);
+    public List<User> getUsersByGenreOrCountry(@RequestParam String genre , @RequestParam (required = false) String city){
+        return userRepository.findByGenreOrCity(genre,city);
     }
 
     @GetMapping("/dances/{danceId}/users")

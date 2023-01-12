@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Dance } from '../_models/dance';
 import { User } from '../_models/user';
 import { DanceService } from '../_services/dance.service';
@@ -17,8 +18,9 @@ export class HomeComponent implements OnInit {
   public intervalId!: any;
   public currentIndex: number = 0;
   public dances!: Dance[];
+  public id!: number;
 
-  constructor(private danceService: DanceService, private userService: UserService) { }
+  constructor(private danceService: DanceService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.danceService.getDances().subscribe(dance => {
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
     });
     this.startAutoPlay();
     this.userService.getUsers().subscribe(user => {
-      this.users = user
+      this.users = user;
     })
   };
 
@@ -65,5 +67,27 @@ export class HomeComponent implements OnInit {
     } else {
       this.resetAutoPlay();
     }
+  }
+
+  goToListProfil(id: string){
+    this.router.navigate([`/list-profile/${id}`]);
+  }
+
+  gotToProfileId(id: string) {
+    this.userService.getUsersByDanceId(id).subscribe(users => {
+      this.users = users;
+      this.router.navigate([`/list-profile/${id}`]);
+      console.log(users);
+
+  });
+
+  }
+
+  goToRegister(): void {
+    this.router.navigate(['/register'])
+  }
+
+  goToLogin(): void {
+    this.router.navigate(['/login'])
   }
 }

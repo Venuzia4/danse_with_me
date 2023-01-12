@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 
@@ -8,20 +9,20 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  profileId!: string;
   users!:User[];
+  user!: User;
   id!:number;
 
-  constructor(private userservice:UserService) { }
+  constructor(private userService:UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.userservice.getUsers().subscribe((
+    this.userService.getUsers().subscribe((
       (result:User[])=>{
         console.log(result);
         this.users=result;
-
       }
-    ))
-
+    ));
   }
-
 }
