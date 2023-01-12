@@ -2,11 +2,11 @@
     <img class="logo" src="/assets/images/with_me__2_-removebg-preview.png" alt="logo">    
     <form>
         <h2>Register</h2>
-        <input class="registerInput" type="text" placeholder="Lastname" name="lastname" />
-        <input class="registerInput" type="text" placeholder="Firstname" name="firstname" />
-        <input class="registerInput" type="text" placeholder="Email" name="email" />
-        <input class="registerInput" type="password" placeholder="Password" name="pw" />
+        <app-input registerForm="lastname" placeholder="Lastname" type="text"></app-input>
+        <app-input registerForm="firstname" placeholder="Fistname" type="text"></app-input>
+        <app-input registerForm="email" placeholder="Email" type="text"></app-input>
+        <app-input registerForm="password" placeholder="Enter Password" type="password"></app-input>
         <button class="btn-register"> Sign up </button>
-        <a href="#" class="link"> <p> Have an account ? Login </p></a>
+        <a routerLink="/login" class="link"> <p> Have an account ? Login </p></a>
     </form>
 </div>

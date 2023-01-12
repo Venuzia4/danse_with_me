@@ -1,6 +1,5 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from './_components/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { InputComponent } from './_components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { RegisterComponent } from './register/register.component';
     ListProfileComponent,
     ProfileComponent,
     ButtonComponent,
-    RegisterComponent
-
+    RegisterComponent,
+    LoginComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
