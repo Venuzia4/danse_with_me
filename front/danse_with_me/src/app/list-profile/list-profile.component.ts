@@ -26,9 +26,6 @@ export class ListProfileComponent implements OnInit {
     private router: Router) { }
 
 
-  createSafeUrl(url: string): SafeUrl {
-    return this.userService.createSafeUrl(url)
-  };
 
   gotToProfileId(id: string) {
     this.router.navigate([`/profile/${id}`])
