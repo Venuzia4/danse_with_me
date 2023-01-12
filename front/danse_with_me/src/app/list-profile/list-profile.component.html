@@ -38,7 +38,7 @@
 
   <div class="containerPageDanseProfiles">
 
-    <div class="profileCard">
+    <div class="profileCard" style="background-image: url('{{user.picture}}');" (click)="gotToProfileId(user.id)">
 
       <div class="imageProfile">
 
@@ -50,13 +50,13 @@
       </div>
     </div>
 
-    <div class="profileCard" ><img [src]="createSafeUrl(user.picture)" (click)="gotToProfileId(user.id)">
+
 
       <div class="imageProfile">
 
       </div>
 
-    </div>
+
     </div>
     </div>
 

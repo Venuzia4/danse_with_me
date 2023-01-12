@@ -18,6 +18,7 @@ export class ListProfileComponent implements OnInit {
   public users!: User[];
   public dances!: Dance[];
   public safeUrl!: SafeUrl;
+  public user!: User;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,10 +26,6 @@ export class ListProfileComponent implements OnInit {
     private userService: UserService,
     private router: Router) { }
 
-
-  createSafeUrl(url: string): SafeUrl {
-    return this.userService.createSafeUrl(url)
-  };
 
   gotToProfileId(id: string) {
     this.router.navigate([`/profile/${id}`])
@@ -43,9 +40,9 @@ export class ListProfileComponent implements OnInit {
        });
       }
     );
-    this.userService.getUsers().subscribe(user => {
-      this.users = user;
-      console.log(user);
+    this.userService.getUsersByDanceId(this.listProfileId).subscribe(users => {
+      this.users = users;
+      console.log(users);
     });
     this.danseService.getDances().subscribe(dance => {
       this.dances = dance;

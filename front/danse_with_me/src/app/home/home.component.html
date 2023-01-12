@@ -12,7 +12,7 @@
             <div class="squareFront">
               <img  src="{{dance.picture}}" alt="image logo">
             </div>
-            <div class="squareBack" (click)="goToListProfil(dance.id)">
+            <div class="squareBack" (click)="gotToProfileId(dance.id)">
               <h2>{{ dance.name }}</h2>
               <p>{{ dance.description }}</p>
             </div>
@@ -24,7 +24,7 @@
       <h2>Les derniers inscrits</h2>
       <div class="carousel">
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
-        <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
+        <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5" >
           <div class="slide">
             <img (click)="getUser(user.id)" src="{{ user.picture }}" alt="Image">
 
