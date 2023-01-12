@@ -1,6 +1,7 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -33,9 +34,9 @@ import { InputComponent } from './_components/input/input.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     BrowserAnimationsModule,
     ReactiveFormsModule
+
 
   ],
   providers: [],

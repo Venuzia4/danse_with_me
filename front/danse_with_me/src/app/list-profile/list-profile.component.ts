@@ -1,5 +1,5 @@
-
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Dance } from '../_models/dance';
 import { User } from '../_models/user';
@@ -12,32 +12,41 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./list-profile.component.css']
 })
 export class ListProfileComponent implements OnInit {
-  users!:User[];
-  dance!:Dance;
-  name!:string;
-  selectedDanseName='';
+
+  public listProfileId!: string;
+  public dance!: Dance;
+  public users!: User[];
+  public dances!: Dance[];
+  public safeUrl!: SafeUrl;
+
+  constructor(
+    private route: ActivatedRoute,
+    private danseService: DanceService,
+    private userService: UserService,
+    private router: Router) { }
 
 
 
-  constructor(private userService:UserService,private router: Router,
-		private route: ActivatedRoute,private danceService:DanceService) {
-      this.route.paramMap.subscribe((params:ParamMap)=>{
-        return this.danceService.getDance(<string>params.get('id')).subscribe((response)=>{
-          console.log(response)
-          this.dance=response;
-        })
-
-      })
-     }
-
-
-
-
-
+  gotToProfileId(id: string) {
+    this.router.navigate([`/profile/${id}`])
+  };
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+			 this.listProfileId = <string> params.get('id');
+       this.danseService.getDance(this.listProfileId).subscribe((dance: Dance) => {
+				this.dance = dance;
+        console.log(dance);
+       });
+      }
+    );
+    this.userService.getUsers().subscribe(user => {
+      this.users = user;
+      console.log(user);
+    });
+    this.danseService.getDances().subscribe(dance => {
+      this.dances = dance;
+    });
 
-
-  }
-
+}
 }

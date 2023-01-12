@@ -15,8 +15,8 @@ class DanseWithMeApplicationTests {
 	private UserRepository userRepository;
 
 	@Test
-	void findByGenreOrCountry() {
-		List<User> users =userRepository.findByGenreOrCountry("feminin","bordeaux");
+	void findByGenreOrCity() {
+		List<User> users =userRepository.findByGenreOrCity("feminin","bordeaux");
 		users.forEach((user)->{
 			System.out.println(user.getId());
 			System.out.println(user.getGenre());
