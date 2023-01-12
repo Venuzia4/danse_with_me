@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.danceService.getDances().subscribe(dance => {
       this.dances = dance
+
     });
     this.startAutoPlay();
     this.userService.getUsers().subscribe(user => {
