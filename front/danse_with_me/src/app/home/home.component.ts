@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Dance } from '../_models/dance';
 import { DanceService } from '../_services/dance.service';
 
@@ -16,20 +14,33 @@ import { DanceService } from '../_services/dance.service';
 })
 export class HomeComponent implements OnInit {
   users!: User[];
-  dances!:Dance[];
-  id!:string;
   public searchForm!:FormGroup;
+  public autoPlay = false;
+  public intervalId!: any;
+  public currentIndex: number = 0;
+  public dances!: Dance[];
+  public id!: string;
 
 
-  autoPlay = false;
-  intervalId!: any;
-  currentIndex: number = 0;
-
-  constructor(private userService: UserService,private router: Router,private formBuilder:FormBuilder,private danseService:DanceService
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private formBuilder:FormBuilder,
+    private danseService:DanceService
 		) { }
 
 
 
+  ngOnInit(): void {
+    this.danseService.getDances().subscribe(dance => {
+      this.dances = dance
+
+    });
+    this.startAutoPlay();
+    this.userService.getUsers().subscribe(user => {
+      this.users = user;
+    })
+  };
 
   startAutoPlay() {
     this.intervalId = setInterval(() => this.scrollRight(), 3000);
@@ -48,27 +59,6 @@ export class HomeComponent implements OnInit {
     clearInterval(this.intervalId);
   }
 
-
-  ngOnInit(): void {
-    this.startAutoPlay();
-
-    this.userService.getUsers().subscribe((
-      (result: User[]) => {
-        console.log(result);
-        this.users = result;
-
-      }
-    ))
-
-    this.danseService.getDances().subscribe((
-      (result: Dance[]) => {
-        console.log(result);
-        this.dances = result;
-
-
-      }
-    ))
-  }
 
   getUser(id: string) {
 		this.router.navigate(['/profil',id]);
@@ -92,6 +82,28 @@ export class HomeComponent implements OnInit {
     } else {
       this.resetAutoPlay();
     }
+  }
+
+  goToListProfil(id: string){
+    this.router.navigate([`/list-profile/${id}`]);
+  }
+
+  gotToProfileId(id: string) {
+    this.userService.getUsersByDanceId(id).subscribe(users => {
+      this.users = users;
+      this.router.navigate([`/list-profile/${id}`]);
+      console.log(users);
+
+  });
+
+  }
+
+  goToRegister(): void {
+    this.router.navigate(['/register'])
+  }
+
+  goToLogin(): void {
+    this.router.navigate(['/login'])
   }
 }
 

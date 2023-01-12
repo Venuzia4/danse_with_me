@@ -87,10 +87,10 @@ header{
   transform: translate(-50%, -50%);
 }
 
-.square:hover .square-inner {
+.square:hover .squareInner {
   transform: rotateY(180deg);
 }
-.square-inner {
+.squareInner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -98,21 +98,21 @@ header{
   transition: transform 0.9s;
   transform-style: preserve-3d;
 }
-.square-front, .square-back {
+.squareFront, .squareBack {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
-.square-front {
+.squareFront {
   background-color: #bbb;
 }
-.square-back {
+.squareBack {
   background-color: #36393b;
   color: white;
   transform: rotateY(180deg);
 }
-.square-front img {
+.squareFront img {
   height: 100%;
   width: 100%;
 }

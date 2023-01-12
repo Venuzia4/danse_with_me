@@ -1,25 +1,17 @@
+<div class="backgroundDanse" *ngIf="users && dance" >
 
-
-
-
-
-
-
-<div class="backgroundDanse">
-
-  <h2>cc</h2>
+  <H2>{{dance.name}}</H2>
 
 
 
 </div>
 <div class="cadreDescription">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus mollitia nemo illum, obcaecati blanditiis quo magni voluptas aut deserunt velit perspiciatis neque quia et distinctio commodi. Quas laboriosam ad esse.
-        Consequatur necessitatibus velit, commodi culpa eveniet iste omnis quod repellendus nemo praesentium cupiditate, distinctio pariatur nisi assumenda! Quod, neque eligendi veritatis obcaecati consequatur fugit nisi ea aut illum quasi repellat.
+        {{dance.description}}
     </div>
 
 <div class="titreList">
 
-    <h3>La liste de nos danseuses et danseurs de SALSA</h3>
+    <h3>La liste de nos danseuses et danseurs de {{dance.name}}</h3>
 
   <form action="trier" method="post">
 
@@ -42,121 +34,33 @@
 
 </div>
 
-<div class="containerPageDanse">
+<div class="containerPageDanse" *ngFor="let user of users">
 
   <div class="containerPageDanseProfiles">
 
-    <a href="" class="profileCard">
+    <div class="profileCard">
 
       <div class="imageProfile">
 
       </div>
       <div class="detailProfile">
 
-        <h3>Fabien</h3>
-        <p>Bègles</p>
-        <p>37 ans</p>
-
+        <h3>{{user.firstname}}</h3>
+        <p>{{user.city}}</p>
       </div>
-    </a>
+    </div>
 
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-cottonbro-studio-6962024.jpg');">
+    <div class="profileCard" ><img [src]="createSafeUrl(user.picture)" (click)="gotToProfileId(user.id)">
 
       <div class="imageProfile">
 
       </div>
-      <div class="detailProfile">
 
-        <h3>Jessica</h3>
-        <p>Bordeaux</p>
-        <p>25 ans</p>
+    </div>
+    </div>
+    </div>
 
-      </div>
-    </a>
 
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-cottonbro-studio-8090137.jpg');">
 
-      <div class="imageProfile">
 
-      </div>
-      <div class="detailProfile">
 
-        <h3>Francisco</h3>
-        <p>Gradignan</p>
-        <p>23 ans</p>
-
-      </div>
-    </a>
-
-    <a href="" class="profileCard" style="background-image: url('/assets/images/profil.png');">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>Avatar</h3>
-        <p>Tresses</p>
-        <p>30 ans</p>
-
-      </div>
-    </a>
-
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-dziana-hasanbekava-7275385.jpg');">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>Aurélie</h3>
-        <p>Lormont</p>
-        <p>27 ans</p>
-
-      </div>
-    </a>
-
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-arthouse-studio-4571943.jpg');">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>Jean-Claude</h3>
-        <p>Bruges</p>
-        <p>52 ans</p>
-
-      </div>
-    </a>
-
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-cottonbro-studio-6626882.jpg');">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>Cyril</h3>
-        <p>Eysines</p>
-        <p>25 ans</p>
-
-      </div>
-    </a>
-
-    <a href="" class="profileCard" style="background-image: url('/assets/pexels-cottonbro-studio-5821482.jpg');">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>May</h3>
-        <p>Pessac</p>
-        <p>34 ans</p>
-
-      </div>
-    </a>
-
-  </div>
-</div>
