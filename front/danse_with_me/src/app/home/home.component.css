@@ -79,6 +79,7 @@ header{
 
 }
 
+
 .rightArrow {
   position: absolute;
   top: 50%;
@@ -116,5 +117,37 @@ header{
   width: 100%;
 }
 
+
+.search-bar {
+
+  display: flex;
+  width: 50%;
+  margin: auto;
+  padding: auto;
+  justify-content: center;
+  padding-top: 20%;
+
+
+
+
+
+
+
+}
+.search{
+padding: 16px;
+
+width: 100%;
+text-align: center;
+border-radius: 10px;
+
+
+}
+
+i {
+  position: absolute;
+  left: 0;
+  margin: 10px;
+}
 
 

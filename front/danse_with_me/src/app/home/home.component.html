@@ -1,6 +1,35 @@
+
 <div class="homeContainer" *ngIf="dances && users" >
   <h2>Les catégories</h2>
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+<form  [formGroup]="searchForm" class="search-bar" (ngSubmit)=" onSearchUsers(id)">
+
+  		<select
+			class="search"
+			name="id"
+			type="text"
+			formControlName="id"
+
+		>
+
+    <option [ngValue]="null" disabled>selectionner une danse</option>
+			<option
+				*ngFor="let dance of dances"
+        [value]="dance.id"
+			>
+				{{ dance.name}}
+			</option>
+    </select>
+    <input type="submit" value="Submit">
+
+		<!--
+  <input class="search" type="search" formControlName="name"  placeholder="Effectuez une recherche par catégories de danse"> -->
+  <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+
+
+
+</form>
   <div class="homeWrapper">
     <div class="squareContainer">
       <div *ngFor="let dance of dances">
@@ -24,6 +53,7 @@
         <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
             <img src="{{ user.picture }}" alt="Image">
+
           </div>
         </div>
         <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>
@@ -32,3 +62,5 @@
     </div>
   </div>
 </div>
+
+

@@ -1,4 +1,7 @@
+
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, Inject, Injectable, OnInit } from '@angular/core';
+
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 
@@ -8,19 +11,21 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  users!:User[];
-  id!:number;
+  user!:User;
+  id!:string;
 
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService,private route: ActivatedRoute,) {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      return this.userservice.getUser(<string>params.get('id')).subscribe((response)=>{
+        console.log(response)
+        this.user=response;
+      })
+
+    })
+   }
 
   ngOnInit(): void {
-    this.userservice.getUsers().subscribe((
-      (result:User[])=>{
-        console.log(result);
-        this.users=result;
 
-      }
-    ))
 
   }
 

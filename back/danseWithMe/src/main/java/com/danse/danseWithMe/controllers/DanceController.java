@@ -1,9 +1,9 @@
-package com.danse.danseWithMe.controller;
+package com.danse.danseWithMe.controllers;
 
-import com.danse.danseWithMe.entity.Dance;
-import com.danse.danseWithMe.entity.User;
-import com.danse.danseWithMe.repository.DanceRepository;
-import com.danse.danseWithMe.repository.UserRepository;
+import com.danse.danseWithMe.entities.Dance;
+import com.danse.danseWithMe.entities.User;
+import com.danse.danseWithMe.repositories.DanceRepository;
+import com.danse.danseWithMe.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

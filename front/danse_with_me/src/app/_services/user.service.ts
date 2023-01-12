@@ -20,8 +20,8 @@ export class UserService {
 		return this.httpClient.get<User[]>(environment.urlAPI + this.ENDPOINT_USERS +"/all");
 	}
 
+  getUser(id:string): Observable<User> {
+		return this.httpClient.get<User>(this.API_URL+this.ENDPOINT_USER + id);
 
-  getUser(id:number): Observable<User> {
-		return this.httpClient.get<User>(environment.urlAPI + this.ENDPOINT_USER + id);
 	}
 }
