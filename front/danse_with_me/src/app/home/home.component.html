@@ -1,8 +1,6 @@
-<div class="homeContainer">
-  <!-- <header>
-    <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond">
-  </header> -->
 
+<div class="homeContainer" *ngIf="dances && users" >
+  <h2>Les catégories</h2>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
 <form  [formGroup]="searchForm" class="search-bar" (ngSubmit)=" onSearchUsers(id)">
@@ -33,24 +31,29 @@
 
 </form>
   <div class="homeWrapper">
-    <div class="homeCategory">
-      <h2>Les catégories</h2>
-      <div class="squareContainer">
-        <div *ngFor="let item of items">
-          <div class="square" [style.background-image]="'url(' + item.imageUrl + ')'">
-            <div class="label" [ngStyle]="{'color' : '#ffff'}">{{ item.label }}</div>
+    <div class="squareContainer">
+      <div *ngFor="let dance of dances">
+        <div class="square">
+          <div class="square-inner">
+            <div class="square-front">
+              <img src="{{dance.picture}}" alt="image logo">
+            </div>
+            <div class="square-back">
+              <h2>{{ dance.name }}</h2>
+              <p>{{ dance.description }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div><br>
-
-    <div class="homeLastRegistrant">
+    </div>
+    <div class="homeLastRegistrant" >
       <h2>Les derniers inscrits</h2>
       <div class="carousel">
         <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
-        <div *ngFor="let picture of users | slice:currentIndex:currentIndex + 5">
+        <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5">
           <div class="slide">
-            <img  (click)="getUser(picture.id)" [src]="picture.picture" alt="Image">
+            <img src="{{ user.picture }}" alt="Image">
+
           </div>
         </div>
         <span (click)="scrollRight()" class="rightArrow"><strong>>></strong></span>

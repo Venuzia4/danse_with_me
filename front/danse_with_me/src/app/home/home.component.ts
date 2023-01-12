@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { User } from '../_models/user';
@@ -6,6 +7,7 @@ import { UserService } from '../_services/user.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Dance } from '../_models/dance';
 import { DanceService } from '../_services/dance.service';
+
 
 @Component({
   selector: 'app-home',
@@ -23,18 +25,26 @@ export class HomeComponent implements OnInit {
   intervalId!: any;
   currentIndex: number = 0;
 
-  items = [
-    { label: 'SALSA', imageUrl: '../../assets/65890971.png' },
-    { label: 'BACHATA', imageUrl: '../../assets/65891002.png' },
-    { label: 'KIZOMBA', imageUrl: '../../assets/65899291.png' },
-
-  ];
-
-
-
   constructor(private userService: UserService,private router: Router,private formBuilder:FormBuilder,private danseService:DanceService
 		) { }
 
+  public users!: User[];
+  public autoPlay = false;
+  public intervalId!: any;
+  public currentIndex: number = 0;
+  public dances!: Dance[];
+
+ 
+
+  ngOnInit(): void {
+    this.danceService.getDances().subscribe(dance => {
+      this.dances = dance
+    });
+    this.startAutoPlay();
+    this.userService.getUsers().subscribe(user => {
+      this.users = user
+    })
+  };
 
   startAutoPlay() {
     this.intervalId = setInterval(() => this.scrollRight(), 3000);
@@ -52,6 +62,7 @@ export class HomeComponent implements OnInit {
   stopAutoPlay() {
     clearInterval(this.intervalId);
   }
+
 
   ngOnInit(): void {
     this.startAutoPlay();
@@ -72,35 +83,12 @@ export class HomeComponent implements OnInit {
 
       }
     ))
-
-
-     this.searchForm=this.formBuilder.group({
-
-       id:['',Validators.required],
-
-     });
-
   }
-
-   onSearchUsers(id:string){
-    this.searchForm.getRawValue;
-   this.router.navigate(['/list-profile',id])
-
-    console.log(this.searchForm.value)
-   }
 
   getUser(id: string) {
 		this.router.navigate(['/profil',id]);
 	}
-
-   get name() {
-	 	return this.searchForm.get('name');
-	}
-
-  get danceId() {
-		return this.searchForm.get('id');
-	}
-
+  
   resetAutoPlay() {
     this.currentIndex = 0;
     this.stopAutoPlay();
@@ -120,7 +108,5 @@ export class HomeComponent implements OnInit {
       this.resetAutoPlay();
     }
   }
-
 }
-
 
