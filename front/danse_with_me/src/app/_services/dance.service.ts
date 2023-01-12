@@ -26,7 +26,7 @@ export class DanceService {
 	}
 
  getUsersByDanceName():Observable<Dance>{
-  return this.httpClient.get<Dance>(this.API_URL+"/getUsers");
+  return this.httpClient.get<Dance>(environment.urlAPI+"/getUsers");
  }
 
  getUsersByDanceId(params: HttpParams):Observable<Dance>{

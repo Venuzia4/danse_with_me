@@ -28,23 +28,8 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService,private router: Router,private formBuilder:FormBuilder,private danseService:DanceService
 		) { }
 
-  public users!: User[];
-  public autoPlay = false;
-  public intervalId!: any;
-  public currentIndex: number = 0;
-  public dances!: Dance[];
 
- 
 
-  ngOnInit(): void {
-    this.danceService.getDances().subscribe(dance => {
-      this.dances = dance
-    });
-    this.startAutoPlay();
-    this.userService.getUsers().subscribe(user => {
-      this.users = user
-    })
-  };
 
   startAutoPlay() {
     this.intervalId = setInterval(() => this.scrollRight(), 3000);
@@ -88,7 +73,7 @@ export class HomeComponent implements OnInit {
   getUser(id: string) {
 		this.router.navigate(['/profil',id]);
 	}
-  
+
   resetAutoPlay() {
     this.currentIndex = 0;
     this.stopAutoPlay();
