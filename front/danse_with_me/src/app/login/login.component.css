@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.logo {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -21px;
+}
+
+h2 {
+    color: black;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.register-wrap {
+    position: relative;
+    margin: 50px auto;
+    background: #eee4f6;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    padding-top: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 30px;
+}
+
+.link {
+    color: black;
+}
+
+.registerInput {
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    box-shadow: 2px 2px 5px #333;
+    outline: none;
+    padding: 8px;
+
+}
+
+.link {
+    text-align: center;
+}
+
+.btn-register {
+    color: white;
+    border: none;
+    background-color: #572e72;
+    border-radius: 5px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    color: white;
+    border: none;
+    background-color: #3b1c46;
+    border-radius: 5px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+p {
+    color: black;
+    margin: 10px;
+}
+
+
+
+
