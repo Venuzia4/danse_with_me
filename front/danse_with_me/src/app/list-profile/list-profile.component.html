@@ -4,37 +4,37 @@
 
 
 
-</div>
-<div class="cadreDescription">
+ </div>
+ <div class="cadreDescription">
         {{dance.description}}
     </div>
 
-<div class="titreList">
+ <div class="titreList">
 
     <h3>La liste de nos danseuses et danseurs de {{dance.name}}</h3>
 
   <form action="trier" method="post">
 
-    <div class="checkTri oneWoman">
+    <div class="checkTri oneWoman" (click)="onGenderChange('femme')">
       <input type="radio" class="check-with-label" name="groupe1" id="Danseuses" value="danseuses">
       <label for="Danseuses" class="square">Danseuses <img src="/assets/images/Solo_R.png" class="imgLabel" alt="silhouette danseuse"></label>
     </div>
 
-    <div class="checkTri duo">
+    <div class="checkTri duo" (click)="allGender(dance.id)">
       <input type="radio" class="check-with-label" name="groupe1" id="Tous" value="all" checked>
       <label for="Tous" class="square squareoneWoman">Tous <img src="/assets/images/Couple_RN.png" class="imgLabel" alt="silhouette couple dansant"></label>
     </div>
 
-    <div class="checkTri oneMan">
+    <div class="checkTri oneMan" (click)="onGenderChange('homme')">
       <input type="radio" class="check-with-label" name="groupe1" id="Danseurs" value="danseurs">
       <label for="Danseurs" class="square squareoneMan">Danseurs <img src="/assets/images/Solo_N.png" class="imgLabel imgLabelOneMan" alt="silhouette danseur"></label>
     </div>
 
   </form>
 
-</div>
+ </div>
 
-<div class="containerPageDanse">
+ <div class="containerPageDanse">
   <div class="containerPageDanseProfiles">
     <div class="profileCard" *ngFor="let user of users" style="background-image: url('{{user.picture}}')" (click)="gotToProfileId(user.id)">
           <div class="imageProfile">
@@ -45,4 +45,4 @@
           </div>
     </div>
   </div>
-</div> 
+ </div>
