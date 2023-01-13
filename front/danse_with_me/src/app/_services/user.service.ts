@@ -23,7 +23,6 @@ export class UserService {
 
   getUser(id:string): Observable<User> {
 		return this.httpClient.get<User>(environment.urlAPI+this.ENDPOINT_USER + id);
-
 	}
 
   public createSafeUrl(url: string): SafeUrl {
