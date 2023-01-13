@@ -3,7 +3,6 @@
 
 .containerBg{
   height: 80vh;
-  /* background-image: url('/assets/xenoblade-chronicles-3.jpg'); */
   background-image: url('https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
   background-position: center center;
   background-repeat: no-repeat;
@@ -80,7 +79,6 @@ h3{
   flex-direction: row;
   justify-content: center;
   overflow-x: auto;
-  /* height: 40vh; */
   padding: 5px;
   height: 100%;
   margin-top: 4vh;
