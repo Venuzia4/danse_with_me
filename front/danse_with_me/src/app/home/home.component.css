@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+
 .containerBg{
   height: 80vh;
   /* background-image: url('/assets/xenoblade-chronicles-3.jpg'); */
@@ -7,8 +8,23 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   opacity: 90%;
 }
+
+h1 {
+  font-size: 8rem;
+  font-family: 'Lobster';
+}
+h3{
+  color: white;
+  font-size: 2rem;
+  font-family: 'Lobster';
+}
+
 
 .homeLastRegistrant {
   margin-bottom: 25px;

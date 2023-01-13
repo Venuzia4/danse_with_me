@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+.container-login{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+
 .logo {
     width: 120px;
     height: 120px;
@@ -83,7 +92,3 @@ p {
     color: black;
     margin: 10px;
 }
-
-
-
-
