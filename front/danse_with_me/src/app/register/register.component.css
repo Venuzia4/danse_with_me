@@ -14,10 +14,17 @@ h2 {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+.container-register{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
 
 .register-wrap {
     position: relative;
-    margin: 50px auto;
     background: #e0b99a;
     width: 350px;
     border-radius: 5px;

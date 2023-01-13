@@ -28,4 +28,6 @@
   left: 0; */
   height: 62px;
   margin-left: 35px; 
+  border: 1px solid white;
+  border-radius: 50%;
 }
