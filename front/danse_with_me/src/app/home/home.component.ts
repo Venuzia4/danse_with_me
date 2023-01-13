@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
 
 
   getUser(id: string) {
-		this.router.navigate(['/profil',id]);
+		this.router.navigate([`/profile/${id}`]);
 	}
 
   resetAutoPlay() {
@@ -84,10 +84,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goToListProfil(id: string){
-    this.router.navigate([`/list-profile/${id}`]);
-  }
-
   gotToProfileId(id: string) {
     this.userService.getUsersByDanceId(id).subscribe(users => {
       console.log(users);
@@ -103,5 +99,6 @@ export class HomeComponent implements OnInit {
   goToLogin(): void {
     this.router.navigate(['/login'])
   }
+
 }
 
