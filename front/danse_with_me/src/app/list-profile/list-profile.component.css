@@ -19,7 +19,7 @@
     text-align: center;
     color: wheat;
     background-color: black;
-    transform: translate(50%,-10%);
+    transform: translate(50%,-10%); 
     width: 50%;
     padding: 2rem;
     border-radius: 5px;
@@ -68,7 +68,7 @@
     -webkit-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
     -moz-box-shadow: 0 0 6.5px 1.5px #b3b2b2;
     box-shadow: 0 0 6.5px 1.5px #b3b2b2;
-
+    
 }
 
 .square{
@@ -88,7 +88,7 @@
 }
 
 
-.containerPageDanse{
+.containerPageDanse{ 
     display: flex;
     justify-content: center;
     margin-top: 25px;
@@ -101,7 +101,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
     gap: 15px;
 }
 
@@ -109,6 +109,7 @@
     width: 250px;
     height: 300px;
     margin: auto;
+    background-image: url('/assets/pexels-cottonbro-studio-5378700.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     object-position: center;

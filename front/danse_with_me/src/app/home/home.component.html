@@ -18,7 +18,7 @@
               <div class="square-front">
                 <img src="{{dance.picture}}" alt="image logo">
               </div>
-              <div class="square-back">
+              <div class="square-back" (click)="goToListProfil(dance.id)">
                 <h2>{{ dance.name }}</h2>
                 <p>{{ dance.description }}</p>
               </div>
