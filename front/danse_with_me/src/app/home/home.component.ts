@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   public currentIndex: number = 0;
   public dances!: Dance[];
   public id!: string;
+  public selectedDance!: Dance;
+  public selectedGender!: string;
 
 
   constructor(

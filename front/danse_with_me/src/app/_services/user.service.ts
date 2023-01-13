@@ -32,4 +32,8 @@ export class UserService {
   public getUsersByDanceId(id: string): Observable<User[]> {
     return this.httpClient.get<User[]>(environment.urlAPI + "/dances/" + id + this.ENDPOINT_USERS);
   }
+
+  getUsersByDanceAndGender(danceName: string, gender: string): Observable<User[]> {
+    return this.httpClient.get<User[]>(`${environment.urlAPI}/getUsersByDance?name=${danceName}&genre=${gender}`);
+}
 }
