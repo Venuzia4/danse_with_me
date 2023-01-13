@@ -13,11 +13,13 @@ import { UserService } from '../_services/user.service';
 })
 export class ListProfileComponent implements OnInit {
 
+  public selectedGender!: string;
   public listProfileId!: string;
   public dance!: Dance;
   public users!: User[];
   public dances!: Dance[];
   public safeUrl!: SafeUrl;
+  public user!: User;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,27 +28,38 @@ export class ListProfileComponent implements OnInit {
     private router: Router) { }
 
 
-
   gotToProfileId(id: string) {
     this.router.navigate([`/profile/${id}`])
   };
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-			 this.listProfileId = <string> params.get('id');
-       this.danseService.getDance(this.listProfileId).subscribe((dance: Dance) => {
-				this.dance = dance;
-        console.log(dance);
-       });
-      }
-    );
-    this.userService.getUsers().subscribe(user => {
-      this.users = user;
-      console.log(user);
-    });
-    this.danseService.getDances().subscribe(dance => {
-      this.dances = dance;
-    });
+      const id = <string>params.get('id');
+      this.userService.getUsersByDanceId(id).subscribe(user => {
+        this.users = user ;
+      })
+      this.danseService.getDance(id).subscribe((dance: Dance) => {
+          this.dance = dance;
+      });
+  });
+  this.userService.getUsersByDanceAndGender(this.dance.name, this.selectedGender).subscribe((users: User[]) => {
+      this.users = users;
+  });
+}
 
+onGenderChange(gender: string) {
+  this.selectedGender = gender;
+  this.userService.getUsersByDanceAndGender(this.dance.name, this.selectedGender).subscribe((users: User[]) => {
+      this.users = users;
+  });
 }
+
+allGender(id: string) {
+    this.userService.getUsersByDanceId(id).subscribe(users => {
+      console.log(users);
+      this.users = users;
+  });
+  }
 }
+
+

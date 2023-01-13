@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { Dance } from '../_models/dance';
 import { DanceService } from '../_services/dance.service';
 
@@ -13,19 +12,20 @@ import { DanceService } from '../_services/dance.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  users!: User[];
-  public searchForm!:FormGroup;
+
+  public users!: User[];
   public autoPlay = false;
   public intervalId!: any;
   public currentIndex: number = 0;
   public dances!: Dance[];
   public id!: string;
+  public selectedDance!: Dance;
+  public selectedGender!: string;
 
 
   constructor(
     private userService: UserService,
     private router: Router,
-    private formBuilder:FormBuilder,
     private danseService:DanceService
 		) { }
 
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   };
 
   startAutoPlay() {
-    this.intervalId = setInterval(() => this.scrollRight(), 3000);
+    this.intervalId = setInterval(() => this.scrollRight(), 8000);
   }
 
   toggleAutoPlay() {
@@ -90,12 +90,10 @@ export class HomeComponent implements OnInit {
 
   gotToProfileId(id: string) {
     this.userService.getUsersByDanceId(id).subscribe(users => {
+      console.log(users);
       this.users = users;
       this.router.navigate([`/list-profile/${id}`]);
-      console.log(users);
-
   });
-
   }
 
   goToRegister(): void {

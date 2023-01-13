@@ -1,6 +1,5 @@
 .containerBg{
   height: 80vh;
-  /* background-image: url('/assets/xenoblade-chronicles-3.jpg'); */
   background-image: url('/assets/images/salsa-scaled.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -23,8 +22,6 @@
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(218,214,214,1) 50%, rgba(255,255,255,1) 100%);
 }
 .square {
-  /* height: 30vh;
-  width: 48vh; */
   height: 275px;
   width: 250px;
   border: 1px solid black;
@@ -70,27 +67,7 @@
   gap: 20px;
 }
 
-/* .slide {
-  flex: 0 0 auto; */
-  /* height: 100%;
-  width: 35vh; */
-  /* width: 250px;
-  height: 300px; */
-  /* border: 1px solid black; */
-  /* position: relative;
-  background-size: cover;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-  margin-left: 20px;
-  border: none;
-  box-shadow: 3px 3px 10px #333;
-}
 
-.slide img {
-  height: 100%;
-  width: 100%;
-} */
 .profileCard{
   width: 250px;
   height: 300px;
@@ -124,7 +101,7 @@
 
 .arrow{
   position: absolute;
-  transform: translate(50%, 50%); 
+  transform: translate(50%, 50%);
   border: 1px solid rgb(172, 171, 171);
   border-radius: 5px;
   padding: 2px;
@@ -133,7 +110,7 @@
 .leftArrow {
   left: 0;
   top: 45%;
-  transform: translate(50%, 50%); 
+  transform: translate(50%, 50%);
 }
 .rightArrow {
   position: absolute;
@@ -163,8 +140,6 @@
   background-color: #bbb;
 }
 .square-back {
-  /* background-color: #36393b;
-  color: white; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,7 +158,6 @@
   margin: auto;
   color: wheat;
  }
-
 
 .square-front img {
   height: 100%;
