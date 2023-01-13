@@ -33,7 +33,7 @@
         <div class="carousel">
           <span (click)="scrollLeft()" class="arrow leftArrow" ><strong><<</strong></span>
           <div *ngFor="let user of users | slice:currentIndex:currentIndex + 4">
-            <div class="profileCard" style="background-image: url('{{ user.picture }}');">  
+            <div class="profileCard" style="background-image: url('{{ user.picture }}');" (click)="getUser(user.id)">    
               <div class="imageProfile">
               </div>
               <div class="detailProfile">
