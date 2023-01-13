@@ -1,23 +1,33 @@
+<div class="containerProfile">
+  <!-- <img class="bg-picture" src="assets/pic.jpg"  alt="picture"/> -->
+  <div class="profil-card" *ngif="user">
 
-  <img class="bg-picture" src="assets/pic.jpg"  alt="picture"/>
-  <div class="profil-card">
-  <div class="profil-name">
-  <h4 >Nom:Doe</h4>
-  <h5>Prenom:Jane</h5>
-  <h5>Genre:Feminin</h5>
-  <h5>Ville:Bègles</h5>
+    <div class="profil-name">
 
-  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dignissimos, quibusdam quo sunt vero maxime ipsa earum, molestiae quasi harum vel.
-    Distinctio, mollitia! Corrupti voluptates assumenda beatae asperiores sit magni?
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat atque eum omnis neque, laborum qui
-   cupiditate sunt aut eligendi modi alias, eius a, accusantium et nulla totam soluta vitae expedita!</p>
+      <h3 class="firstLastName">{{user.firstname}}</h3>
 
+      <div class="profil-detail-up">
+        <h5>Age: <span>25 ans</span></h5>
+        <h5>Ville: <span>{{user.city}}</span></h5>
+        <h5>Danse: <span id="nameDanse">Salsa</span></h5>
+      </div>
 
-  <p>Joingnez-moi sur :<span>jonaDo@gmail.com</span></p>
+      <div class="profil-detail-down">
+        <p>{{user.description}}
+     
+        </p>
+        
+
+        <p id="joinMe">Joignez-moi sur : <span>jonaDo@gmail.com</span></p>
+      </div>
+    </div>
+    <div class="profil-img-box">
+
+      <img class="profil-img" src={{user.picture}} alt="profil"/>
+      
+
+    </div>
   </div>
-
-<img class="profil" src="assets/profil1.png" alt="profil"/>
-
 </div>
 
 

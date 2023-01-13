@@ -9,6 +9,7 @@ const routes: Routes = [
   // { path: 'list-profile/:id', component: ListProfileComponent},
   { path: 'list-profile', component: ListProfileComponent},
   { path: 'profile/:id', component: ProfileComponent}
+  // { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

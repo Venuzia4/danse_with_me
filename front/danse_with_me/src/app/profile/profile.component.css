@@ -1,0 +1,86 @@
+.containerProfile{
+    height: 100vh;
+    /* width: 100%; */
+    background-image: url('/assets/images/multipieds.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 0.3; */
+}
+
+.profil-card{
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 30px; */
+    gap: 20px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+  
+  }
+  .profil-name{
+   width: 70%;
+   height: 80%;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+  }
+  
+.firstLastName{
+    /* padding: 4px; */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.profil-detail-up{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+/* .profil-detail-up span{
+    color: white;
+} */
+#nameDanse{
+    padding: 2px;
+    color: white;
+    border: 1px solid rgb(118, 118, 233);
+    background-color: rgb(183, 82, 250);
+}
+
+.profil-detail-down{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#joinMe{
+    text-align: end;
+}
+#joinMe span{
+    color: rgb(118, 118, 233);
+}
+
+.profil-img-box{
+width: 30%;
+height: 80%;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.profil-img{
+width: 100%;
+/* height: 300px; */
+border-radius: 10px;
+object-fit: cover;
+
+}
