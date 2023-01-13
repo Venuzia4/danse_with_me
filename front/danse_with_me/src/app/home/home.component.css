@@ -22,8 +22,6 @@
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(218,214,214,1) 50%, rgba(255,255,255,1) 100%);
 }
 .square {
-  /* height: 30vh;
-  width: 48vh; */
   height: 275px;
   width: 250px;
   border: 1px solid black;

@@ -14,11 +14,11 @@
     <div class="squareContainer">
       <div *ngFor="let dance of dances">
         <div class="square">
-          <div class="squareInner">
-            <div class="squareFront">
+          <div class="square-inner">
+            <div class="square-front">
               <img  src="{{dance.picture}}" alt="image logo">
             </div>
-            <div class="squareBack" (click)="gotToProfileId(dance.id)">
+            <div class="square-back" (click)="gotToProfileId(dance.id)">
               <h2>{{ dance.name }}</h2>
               <p>{{ dance.description }}</p>
             </div>
@@ -26,13 +26,20 @@
         </div>
       </div>
     </div>
-    <div class="homeLastRegistrant" >
-      <h2>Les derniers inscrits</h2>
-      <div class="carousel">
-        <span (click)="scrollLeft()" class="leftArrow" ><strong><<</strong></span>
-        <div *ngFor="let user of users | slice:currentIndex:currentIndex + 5" >
-          <div class="slide">
-            <img (click)="getUser(user.id)" src="{{ user.picture }}" alt="Image">
+    <div class="titreCategorie">Les derniers inscrits</div>
+      <div class="homeLastRegistrant" >
+
+        <div class="carousel">
+          <span (click)="scrollLeft()" class="arrow leftArrow" ><strong><<</strong></span>
+          <div *ngFor="let user of users | slice:currentIndex:currentIndex + 4">
+            <div class="profileCard" style="background-image: url('{{ user.picture }}');" (click)="getUser(user.id)">
+              <div class="imageProfile">
+              </div>
+              <div class="detailProfile">
+                <h3>{{ user.firstname }}</h3>
+                <p>{{ user.city }}</p>
+              </div>
+            </div>
 
           </div>
           <span (click)="scrollRight()" class="arrow rightArrow"><strong>>></strong></span>
@@ -42,5 +49,4 @@
     </div>
   </div>
 </div>
-
 

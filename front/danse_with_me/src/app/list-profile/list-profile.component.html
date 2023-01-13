@@ -4,18 +4,18 @@
 
 
 
-</div>
-<div class="cadreDescription">
+ </div>
+ <div class="cadreDescription">
         {{dance.description}}
     </div>
 
-<div class="titreList">
+ <div class="titreList">
 
     <h3>La liste de nos danseuses et danseurs de {{dance.name}}</h3>
 
   <form action="trier" method="post">
 
-    <div class="checkTri oneWoman" (click)="onGenderChange('femme')" >
+    <div class="checkTri oneWoman" (click)="onGenderChange('femme')">
       <input type="radio" class="check-with-label" name="groupe1" id="Danseuses" value="danseuses">
       <label for="Danseuses" class="square">Danseuses <img src="/assets/images/Solo_R.png" class="imgLabel" alt="silhouette danseuse"></label>
     </div>
@@ -32,34 +32,17 @@
 
   </form>
 
-</div>
+ </div>
 
-<div class="containerPageDanse">
+ <div class="containerPageDanse">
   <div class="containerPageDanseProfiles">
-
-    <div class="profileCard" style="background-image: url('{{user.picture}}');" (click)="gotToProfileId(user.id)">
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>{{user.firstname}}</h3>
-        <p>{{user.city}}</p>
-      </div>
+    <div class="profileCard" *ngFor="let user of users" style="background-image: url('{{user.picture}}')" (click)="gotToProfileId(user.id)">
+          <div class="imageProfile">
+          </div>
+          <div class="detailProfile">
+            <h3>{{user.firstname}}</h3>
+            <p>{{user.city}}</p>
+          </div>
     </div>
-
-
-
-      <div class="imageProfile">
-
-      </div>
-
-
-    </div>
-    </div>
-
-
-
-
-
+  </div>
+ </div>
