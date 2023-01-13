@@ -34,33 +34,15 @@
 
 </div>
 
-<div class="containerPageDanse" *ngFor="let user of users">
-
+<div class="containerPageDanse">
   <div class="containerPageDanseProfiles">
-
-
-<div class="profileCard" style="background-image: url('{{user.picture}}')" (click)="gotToProfileId(user.id)">
-
-
-      <div class="imageProfile">
-
-      </div>
-      <div class="detailProfile">
-
-        <h3>{{user.firstname}}</h3>
-        <p>{{user.city}}</p>
-      </div>
+    <div class="profileCard" *ngFor="let user of users" style="background-image: url('{{user.picture}}')" (click)="gotToProfileId(user.id)">
+          <div class="imageProfile">
+          </div>
+          <div class="detailProfile">
+            <h3>{{user.firstname}}</h3>
+            <p>{{user.city}}</p>
+          </div>
     </div>
-
-      <div class="imageProfile">
-
-      </div>
-
-
-    </div>
-    </div>
-
-
-
-
-
+  </div>
+</div> 
