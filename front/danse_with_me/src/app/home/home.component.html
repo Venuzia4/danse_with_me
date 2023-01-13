@@ -1,8 +1,14 @@
+<!-- <div class="containerBg">
+  <img src="../../assets/salsa-scaled.jpg" alt="image de fond">
+</div> -->
+<div class="homeContainer">
 
-<div class="homeContainer" *ngIf="dances && users" >
-  <h2>Les catégories</h2>
+  <div class="containerBg">
+    <!-- <img src="../../assets/xenoblade-chronicles-3.jpg" alt="image de fond"> -->
+  </div>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+  <div class="homeMain" *ngIf="dances && users" >
+    <div class="titreCategorie">Les catégories</div>
 
   <div class="homeWrapper">
     <div class="squareContainer">
@@ -29,9 +35,9 @@
             <img (click)="getUser(user.id)" src="{{ user.picture }}" alt="Image">
 
           </div>
+          <span (click)="scrollRight()" class="arrow rightArrow"><strong>>></strong></span>
+          <span (click)="toggleAutoPlay()" ></span>
         </div>
-        <span class="rightArrow" (click)="scrollRight()"><strong>>></strong></span>
-        <span ></span>
       </div>
     </div>
   </div>

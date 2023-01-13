@@ -1,4 +1,3 @@
-
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
@@ -24,7 +23,6 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
 
   }
 }

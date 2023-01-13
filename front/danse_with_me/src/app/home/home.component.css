@@ -1,5 +1,4 @@
-header{
-  width: 100%;
+.containerBg{
   height: 80vh;
   background-image: url('/assets/images/salsa-scaled.jpg');
   background-position: center center;
@@ -8,12 +7,25 @@ header{
 }
 
 .homeLastRegistrant {
-  margin-bottom: 5vh;
+  margin-bottom: 25px;
+  height: 350px;
 }
 
+.titreCategorie{
+  width: 100%;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  margin: auto;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(218,214,214,1) 50%, rgba(255,255,255,1) 100%);
+}
 .square {
-  height: 30vh;
-  width: 48vh;
+  /* height: 30vh;
+  width: 48vh; */
+  height: 275px;
+  width: 250px;
   border: 1px solid black;
   position: relative;
   background-size: cover;
@@ -22,6 +34,8 @@ header{
   border: none;
   box-shadow: 3px 3px 10px #333;
   perspective: 1000px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .label {
@@ -35,7 +49,6 @@ header{
   flex-direction: row;
   justify-content: space-evenly;
   margin: 3vh 0;
-
 }
 
 .homeCategory {
@@ -46,46 +59,61 @@ header{
 .carousel {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   overflow-x: auto;
-  height: 40vh;
+  /* height: 40vh; */
+  padding: 5px;
+  height: 100%;
   margin-top: 4vh;
   position: relative;
+  gap: 20px;
 }
 
-.smooth {
-  transition: transform 8s ease-in-out;
 
-}
-
-.carousel .slide.auto-scrolling {
-  transform: translateX(-100%);
-}
-
-.slide {
-  flex: 0 0 auto;
-  height: 100%;
-  width: 35vh;
-  border: 1px solid black;
-  position: relative;
+.profileCard{
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  background-repeat: no-repeat;
   background-size: cover;
+  object-position: center;
   border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-  margin-left: 20px;
-  border: none;
+  position: relative;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
   box-shadow: 3px 3px 10px #333;
+  flex: 0 0 auto;
+  cursor: pointer;
 }
-
-.slide img {
-  height: 100%;
+.imageProfile{
   width: 100%;
+  height: 70%;
 }
 
-.leftArrow {
+.detailProfile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 30%;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.arrow{
   position: absolute;
-  top: 50%;
+  transform: translate(50%, 50%);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 5px;
+  padding: 2px;
+  cursor: default;
 }
-
+.leftArrow {
+  left: 0;
+  top: 45%;
+  transform: translate(50%, 50%);
+}
 .rightArrow {
   position: absolute;
   top: 50%;
@@ -93,10 +121,10 @@ header{
   transform: translate(-50%, -50%);
 }
 
-.square:hover .squareInner {
+.square:hover .square-inner {
   transform: rotateY(180deg);
 }
-.squareInner {
+.square-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -104,26 +132,38 @@ header{
   transition: transform 0.9s;
   transform-style: preserve-3d;
 }
-.squareFront, .squareBack {
+.square-front, .square-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
-.squareFront {
+.square-front {
   background-color: #bbb;
 }
-.squareBack {
-  background-color: #36393b;
+.square-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
   color: white;
   transform: rotateY(180deg);
+  padding: 15px;
+  text-align: justify;
 }
-.squareFront img {
+.square-back h2{
+ margin-bottom: 15px;
+ color: white;
+}
+.square-back p{
+  margin: auto;
+  color: wheat;
+ }
+
+.square-front img {
   height: 100%;
   width: 100%;
 }
-
-
-
 
 
