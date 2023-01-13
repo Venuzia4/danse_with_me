@@ -1,5 +1,5 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 
@@ -25,5 +25,4 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 }

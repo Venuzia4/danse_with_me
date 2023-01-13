@@ -1,7 +1,7 @@
-package com.danse.danseWithMe.controller;
+package com.danse.danseWithMe.controllers;
 
-import com.danse.danseWithMe.entity.User;
-import com.danse.danseWithMe.repository.UserRepository;
+import com.danse.danseWithMe.entities.User;
+import com.danse.danseWithMe.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,13 +30,23 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getUsersByGenreOrCountry(@RequestParam String genre , @RequestParam (required = false) String country){
-        return userRepository.findByGenreOrCountry(genre,country);
+    public List<User> getUsersByGenreOrCountry(@RequestParam String genre , @RequestParam (required = false) String city){
+        return userRepository.findByGenreOrCity(genre,city);
     }
 
     @GetMapping("/dances/{danceId}/users")
     public List<User> getUsersByDance(@PathVariable Integer danceId) {
-        return (List<User>) userRepository.findUsersByDancesId(danceId);
+        return  userRepository.findUsersByDancesId(danceId);
+    }
+
+    @GetMapping("/getUsers")
+    public List<User> getUsersByDanceName(@RequestParam String name) {
+        return  userRepository.findUserByDancesName(name);
+    }
+
+    @GetMapping("/getUsersByDance")
+    public List<User> getUsersByDanceNameAndGenre(@RequestParam String name, @RequestParam String genre) {
+        return  userRepository.findUserByGenreAndAndDancesName(genre,name);
     }
 
 

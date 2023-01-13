@@ -1,4 +1,4 @@
-package com.danse.danseWithMe.entity;
+package com.danse.danseWithMe.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

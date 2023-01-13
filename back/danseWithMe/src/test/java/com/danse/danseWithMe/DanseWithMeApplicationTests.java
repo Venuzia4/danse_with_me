@@ -1,7 +1,7 @@
 package com.danse.danseWithMe;
 
-import com.danse.danseWithMe.entity.User;
-import com.danse.danseWithMe.repository.UserRepository;
+import com.danse.danseWithMe.entities.User;
+import com.danse.danseWithMe.repositories.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +15,8 @@ class DanseWithMeApplicationTests {
 	private UserRepository userRepository;
 
 	@Test
-	void findByGenreOrCountry() {
-		List<User> users =userRepository.findByGenreOrCountry("feminin","bordeaux");
+	void findByGenreOrCity() {
+		List<User> users =userRepository.findByGenreOrCity("feminin","bordeaux");
 		users.forEach((user)->{
 			System.out.println(user.getId());
 			System.out.println(user.getGenre());

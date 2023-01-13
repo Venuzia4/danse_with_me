@@ -4,10 +4,10 @@
 
     <div class="profil-name">
 
-      <h3 class="firstLastName">{{user.firstname}}</h3>
+      <h3 class="firstLastName">{{user.firstname}} {{user.lastname}}</h3>
 
       <div class="profil-detail-up">
-        <h5>Age: <span>25 ans</span></h5>
+         <h5>Genre:  <span>{{user.genre}}</span></h5>
         <h5>Ville: <span>{{user.city}}</span></h5>
         <h5>Danse: <span id="nameDanse">Salsa</span></h5>
       </div>
@@ -24,7 +24,6 @@
     <div class="profil-img-box">
 
       <img class="profil-img" src={{user.picture}} alt="profil"/>
-      
 
     </div>
   </div>
