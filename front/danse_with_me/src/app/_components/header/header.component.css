@@ -11,21 +11,11 @@
 }
 
 .profilPicture {
-  /* position: fixed;
-  right: 0;
-  top: 23px;
-  height: 22vh;
-  margin-top: 15px;
-  margin-right: 40px; */
   height: 60px;
   margin-right: 40px; 
 }
 
 .logo {
-  /* position: fixed;
-  top: 0;
-  height: 140px;
-  left: 0; */
   height: 62px;
   margin-left: 35px; 
   border: 1px solid white;
