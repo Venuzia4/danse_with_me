@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+.container-register{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    border: 3px solid blue;
+}
+
 .logo {
-    width: 120px;
-    height: 120px;
+    /* width: 120px;
+    height: 120px; */
+    width: 50px;
+    height: 50px;
     position: absolute;
-    top: -21px;
+    /* top: -21px; */
+    top: 10px;
 }
 
 h2 {
@@ -14,18 +26,9 @@ h2 {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.container-register{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
 
 .register-wrap {
     position: relative;
-    background: #e0b99a;
     background: #eee4f6;
     width: 350px;
     border-radius: 5px;
@@ -40,26 +43,14 @@ form {
     flex-direction: column;
     flex-wrap: wrap;
     display: flex;
+    width: 100%;
     margin: 30px;
+    padding: 15px;
+    gap: 10px;
 }
 
 .link {
     color: black;
-}
-
-.registerInput {
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-    height: 30px;
-    box-shadow: 2px 2px 5px #333;
-    outline: none;
-    padding: 8px;
-
-}
-
-.link {
     text-align: center;
 }
 
@@ -69,8 +60,8 @@ form {
     background-color: #572e72;
     border-radius: 5px;
     height: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     margin-top: 10px;
     cursor: pointer;
 }
@@ -89,7 +80,7 @@ form {
 
 p {
     color: black;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 
