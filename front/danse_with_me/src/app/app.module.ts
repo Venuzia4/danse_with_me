@@ -36,8 +36,6 @@ import { InputComponent } from './_components/input/input.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
-
-
   ],
   providers: [],
   schemas: [
