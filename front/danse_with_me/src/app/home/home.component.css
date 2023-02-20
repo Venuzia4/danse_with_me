@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-
 .containerBg{
   height: 80vh;
-  /* background-image: url('/assets/xenoblade-chronicles-3.jpg'); */
-  background-image: url('https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-image: url('https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2%27');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,8 +35,7 @@ h3{
   color: black;
   margin: auto;
   background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #eee4f6 50%, rgba(255,255,255,1) 100%);
-  font-family: Lobster, cursive;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(218,214,214,1) 50%, rgba(255,255,255,1) 100%);
 }
 .square {
   height: 275px;
@@ -183,14 +178,6 @@ h3{
 .square-front img {
   height: 100%;
   width: 100%;
-}
-
-
-
-i {
-  position: absolute;
-  left: 0;
-  margin: 10px;
 }
 
 

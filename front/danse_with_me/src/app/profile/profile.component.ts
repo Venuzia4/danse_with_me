@@ -12,7 +12,6 @@ import { DanceService } from '../_services/dance.service';
 })
 export class ProfileComponent implements OnInit {
 
-
   dance!: Dance;
   user!:User;
   id!:string;
